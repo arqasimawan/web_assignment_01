@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Otterco+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'otterco';
+            src: url('fonts/otterco.otf') format('opentype'); /* Adjust the path as necessary */
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #F5F5F5;
+        }
+
+        h1, h2 {
+            font-family: 'otterco', sans-serif;
+        }
+
+        .hero-section {
+            background-color: #FAFAFA;
+            color: #222;
+            padding: 5rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #222;
+        }
+
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #FAFAFA;
+            color: #777;
+            padding: 1.5rem;
+            margin-top: auto;
+        }
+        
+        .content {
+            flex: 1; /* Ensures the content grows and pushes the footer to the bottom */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Abdul Rehman Qasim</a>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+                <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+                <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+                <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+                <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+                <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+                <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="container mx-auto py-10">
+        <h2 class="text-3xl font-bold text-center mb-6">Gallery</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white p-4 rounded-lg shadow gallery-item">
+                <img src="image1.jpg" alt="Gallery Image 1" class="w-full h-64 object-cover rounded-lg">
+                <p class="mt-2 text-center text-gray-600">Caption for Image 1</p>
+            </div>
+            <div class="bg-white p-4 rounded-lg shadow gallery-item">
+                <img src="image2.jpg" alt="Gallery Image 2" class="w-full h-64 object-cover rounded-lg">
+                <p class="mt-2 text-center text-gray-600">Caption for Image 2</p>
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+
+     <!-- Footer -->
+    <footer>
+        <div class="container mx-auto flex justify-between items-center">
+            <p>&copy; 2024 Abdul Rehman Qasim | All Rights Reserved</p>
+            <ul class="flex space-x-4">
+                <li><a href="https://www.youtube.com/@ar_qasim_awan" target="_blank" class="hover:text-gray-400">YouTube</a></li>
+                <li><a href="profile.html" class="hover:text-gray-400">LinkedIn</a></li>  
+                <!-- add the right link above -->
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

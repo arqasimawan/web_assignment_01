@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Otterco+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'otterco';
+            src: url('fonts/otterco.otf') format('opentype'); /* Adjust the path as necessary */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex: 1; /* Allows the content to grow and pushes the footer to the bottom */
+        }
+
+        .hero-section {
+            background-color: #FAFAFA;
+            color: #222;
+            padding: 5rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            color: #222;
+        }
+
+        .hero-section p {
+            font-size: 1.25rem;
+            color: #666;
+        }
+
+        .hero-section a {
+            background-color: #333;
+            padding: 0.75rem 2rem;
+            color: #fff;
+            border-radius: 9999px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        footer {
+            background-color: #FAFAFA;
+            color: #777;
+            padding: 1.5rem;
+            width: 100%;
+            margin-top: auto; /* Ensures the footer is pushed to the bottom */
+        }
+
+        h1, h2 {
+            font-family: 'otterco', sans-serif;
+        }
+
+        /* Social Links Styling */
+        .social-links a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            border-bottom: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="bg-white shadow p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-800">Abdul Rehman Qasim</a>
+            <ul class="flex space-x-4">
+                <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+                <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+                <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+                <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+                <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+                <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+                <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="container mx-auto py-10 text-center content">
+        <img src="images/profile.png" alt="Profile Picture" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
+
+        <h2 class="text-3xl font-bold mb-2">Abdul Rehman Qasim</h2>
+        <section class="description">
+            <details>
+                <summary>Courses</summary>
+                <ul>
+                    <li>Agile Project Management -- <a href="https://drive.google.com/file/d/1rxxdueuVgfDXbujrg6AwLB0CuIZ1RHMW/view?usp=sharing">Coursera</a></li>
+                    <li>Intro to SE -- <a href="https://drive.google.com/file/d/1gP8PbK_1mRdct1uQsO_Py3yAW7o7Ey-z/view?usp=sharing">Coursera</a></li>
+                    <li>PM Foundation -- <a href="https://drive.google.com/file/d/1cTWBNMNN2RaxqOPkW4oxpqiZ3i9PkjcE/view?usp=sharing">Coursera</a></li>
+                    <li>Project Planning -- <a href="https://drive.google.com/file/d/1U9ys-hHXjxp38qvYshVi19jcwYCL4qWW/view?usp=sharing">Coursera</a></li>
+                    <li>Project Execution -- <a href="https://drive.google.com/file/d/1xCnGMd35S-T9mrWMsSCcBghwtRGk_dFD/view?usp=sharing">Coursera</a></li>
+                    <li>Project Initiation -- <a href="https://drive.google.com/file/d/1D0yvsZZCPB3Vq0_m68Osnj_K_iGYJAoB/view?usp=sharing">Coursera</a></li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Background</summary>
+                <ul>
+                    <li>From an ancestry of teachers</li>
+                    <li>Qutab Shahi Awan -- half scholars, half warriors</li>
+                    <li>They say that you can't deny blood, and that has never been truer than for me</li>
+                    <li>My <em>mother</em> -- a teacher</li>
+                    <li>My <em>sister</em> -- a teacher</li>
+                    <br>
+                    <li>Me? -- I'm going to make the school of the future (before I die); the warrior side led me to business</li>
+                </ul>
+            </details>
+
+            <details>
+                <summary>Introduction</summary>
+                <p>
+                    Everybody has a unique journey, and mine doesn't shy away from being unique at all.
+                    From studying biology to getting admission into Software Engineering at NUCES, unique right?
+                    <br>
+                    Someone who has no limits but is limiting himself to ONE THING at a time to do his best. Someone leveraging AI to become a more capable and productive human. Someone who loves doing business with his friend and awesome human, Moiz.
+                    Someone who wants to witness the best he can do. Someone who grows 1% every day. Someone who will die but will leave a legacy not far behind that of Abdul Rehman Bin Auf(RA) in terms of business.
+                    <br><br>
+                    This is Abdul Rehman Qasim and welcome to my world!
+                </p>
+            </details>
+        </section>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container mx-auto flex justify-between items-center">
+            <p>&copy; 2024 Abdul Rehman Qasim | All Rights Reserved</p>
+            <ul class="flex space-x-4">
+                <li><a href="https://www.youtube.com/@ar_qasim_awan" target="_blank" class="hover:text-gray-400">YouTube</a></li>
+                <li><a href="profile.html" class="hover:text-gray-400">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

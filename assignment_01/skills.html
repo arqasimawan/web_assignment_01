@@ -9,7 +9,7 @@
     <style>
         @font-face {
             font-family: 'otterco';
-            src: url('fonts/otterco.otf') format('opentype'); /* Adjust the path as necessary */
+            src: url('../fonts/otterco_fonts/Otterco-Regular.otf') format('opentype'); /* Adjust the path as necessary */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -19,27 +19,71 @@
             min-height: 100vh;
         }
 
-        h1, h2, h3 {
-            font-family: 'otterco', sans-serif;
+        main {
+            flex-grow: 1;
         }
 
-        .skills-section {
-            flex: 1; /* Ensures the footer is pushed to the bottom */
+        h1, h2, h3 {
+            font-family: 'otterco', sans-serif;
         }
 
         footer {
             background-color: #FAFAFA;
             color: #777;
             padding: 1.5rem;
+            text-align: center;
+        }
+
+        /* Responsive navbar */
+        @media (max-width: 640px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .hero-section a {
+                padding: 0.5rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+
+            .hero-section p {
+                font-size: 1.15rem;
+            }
+
+            .hero-section a {
+                padding: 0.75rem 1.75rem;
+            }
         }
     </style>
+    <script>
+        // Navbar toggle for mobile screens
+        function toggleNavbar() {
+            var navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="bg-white shadow p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">Abdul Rehman Qasim</a>
-            <ul class="flex space-x-4">
+            <a href="index.html" class="text-2xl font-bold text-gray-800" style="font-family: 'otterco', sans-serif;">Abdul Rehman Qasim</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-500" onclick="toggleNavbar()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Menu -->
+            <ul id="navMenu" class="hidden md:flex space-x-4">
                 <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
                 <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
                 <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
@@ -49,38 +93,72 @@
                 <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
             </ul>
         </div>
+        <!-- Mobile Menu (collapsible) -->
+        <ul id="navMenu" class="md:hidden flex-col hidden space-y-2 mt-4">
+            <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+            <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+            <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+            <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+            <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+            <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+            <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Skills & Interests Section -->
-    <section class="skills-section container mx-auto py-10">
+    <main class="skills-section container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center mb-6">Skills & Interests</h2>
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h3 class="text-2xl font-semibold mb-4">Skills</h3>
             <div class="mb-4">
-                <p class="font-semibold">HTML & CSS</p>
+                <p class="font-semibold">Listening</p>
                 <div class="bg-gray-300 rounded-full h-2">
                     <div class="bg-black h-2 rounded-full" style="width: 90%;"></div>
                 </div>
             </div>
             <div class="mb-4">
-                <p class="font-semibold">JavaScript</p>
+                <p class="font-semibold">SuperTeam</p>
                 <div class="bg-gray-300 rounded-full h-2">
-                    <div class="bg-black h-2 rounded-full" style="width: 85%;"></div>
+                    <div class="bg-black h-2 rounded-full" style="width: 25%;"></div>
                 </div>
             </div>
             <div class="mb-4">
-                <p class="font-semibold">React & Node.js</p>
+                <p class="font-semibold">Problem Formulation</p>
                 <div class="bg-gray-300 rounded-full h-2">
-                    <div class="bg-black h-2 rounded-full" style="width: 80%;"></div>
+                    <div class="bg-black h-2 rounded-full" style="width: 50%;"></div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <p class="font-semibold">Business Development</p>
+                <div class="bg-gray-300 rounded-full h-2">
+                    <div class="bg-black h-2 rounded-full" style="width: 55%;"></div>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <p class="font-semibold">Effective Meeting Organizing</p>
+                <div class="bg-gray-300 rounded-full h-2">
+                    <div class="bg-black h-2 rounded-full" style="width: 70%;"></div>
+                </div>
+            </div>
+
+            <div class="mb-4"></div>
+                <p class="font-semibold">Driving</p>
+                <div class="bg-gray-300 rounded-full h-2">
+                    <div class="bg-black h-2 rounded-full" style="width: 99%;"></div>
                 </div>
             </div>
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
-            <h3 class="text-2xl font-semibold mb-4">Interests</h3>
-            <p class="text-lg text-gray-600">In my free time, I enjoy exploring new web technologies, reading tech blogs, and contributing to open-source projects. I also love photography and traveling to discover new cultures.</p>
+            <h3 class="text-2xl font-semibold mb-4 text-center">Interests</h3>
+            <p class="text-lg text-gray-600 text-center">
+                Reading books in the library. Going on long drives. Spending time with family. Self Improvement. 
+                <br><strong>Living in the present meaningfully</strong>
+            </p>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>

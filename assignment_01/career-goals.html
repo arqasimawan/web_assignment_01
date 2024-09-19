@@ -9,11 +9,19 @@
     <style>
         @font-face {
             font-family: 'otterco';
-            src: url('fonts/otterco.otf') format('opentype'); /* Adjust the path as necessary */
+            src: url('../fonts/otterco_fonts/Otterco-Regular.otf') format('opentype'); /* Adjust the path as necessary */
         }
+
         body {
             font-family: 'Inter', sans-serif;
             background-color: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex-grow: 1;
         }
 
         h1, h2, h3 {
@@ -38,52 +46,109 @@
             background-color: #FAFAFA;
             color: #777;
             padding: 1.5rem;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        /* Responsive navbar */
+        @media (max-width: 640px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .hero-section a {
+                padding: 0.5rem 1.5rem;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            .hero-section h1 {
+                font-size: 3rem;
+            }
+
+            .hero-section p {
+                font-size: 1.15rem;
+            }
+
+            .hero-section a {
+                padding: 0.75rem 1.75rem;
+            }
         }
     </style>
+    <script>
+        // Navbar toggle for mobile screens
+        function toggleNavbar() {
+            var navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="bg-white shadow p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">Abdul Rehman Qasim</a>
-            <ul class="flex space-x-4">
+            <a href="index.html" class="text-2xl font-bold text-gray-800" style="font-family: 'otterco', sans-serif;">Abdul Rehman Qasim</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-500" onclick="toggleNavbar()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Menu -->
+            <ul id="navMenu" class="hidden md:flex space-x-4">
                 <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
-                <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
-                <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
-                <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
-                <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
-                <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+            <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+            <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+            <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+            <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+            <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+            <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
             </ul>
         </div>
+        <!-- Mobile Menu (collapsible) -->
+        <ul id="navMenu" class="md:hidden flex-col hidden space-y-2 mt-4">
+            <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+            <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+            <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+            <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+            <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+            <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+            <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Career Goals Section -->
-    <section class="container mx-auto py-10">
+    <main class="container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center mb-6">Career Goals</h2>
         
         <div class="career-section">
-            <h3 class="text-2xl font-semibold mb-4">Short-Term Goals</h3>
+            <h3 class="text-2xl font-semibold mb-4">Short-Term Goals(12 weeks)</h3>
             <ul class="list-disc list-inside text-gray-700">
-                <li>Improve my skills in web development with a focus on React and Node.js.</li>
-                <li>Work on open-source projects to build a stronger portfolio.</li>
-                <li>Gain experience through freelance work or internships in web development.</li>
+                <li>Build 12-week-year into my workflow for all projects</li>
+                <li>Having a fundamentalist and expert level grip on being a superteam</li>
+                <li>Having a better mental-image to real-creation cycle</li>
+                
             </ul>
         </div>
         
         <div class="career-section">
-            <h3 class="text-2xl font-semibold mb-4">Long-Term Goals</h3>
+            <h3 class="text-2xl font-semibold mb-4">Long-Term Goals (5 years) </h3>
             <ul class="list-disc list-inside text-gray-700">
-                <li>Become a lead web developer in a tech company within the next 5 years.</li>
-                <li>Launch my own startup focused on providing web solutions.</li>
-                <li>Contribute to major open-source projects and give back to the community.</li>
+                <li>Become the best in my field</li>
+                <li>Have the best team around me those guys I worked with and built billion dollar companies with</li>
+                <li>Have a business process which helps me do more, make more and learn more without sacrificing my time with my family</li>
+                <li><strong>Get invited to speak at FAST NUCES Islamabad</strong></li>
             </ul>
         </div>
         
         <div class="text-center mt-8">
-            <!-- <p class="text-lg font-semibold text-gray-700">"People die, history does not" - Me</p> -->
             <blockquote>"People die, history does not" - Me</blockquote>
         </div>
-    </section>
+    </main>
 
     <!-- Footer -->
     <footer>
@@ -92,7 +157,6 @@
             <ul class="flex space-x-4">
                 <li><a href="https://www.youtube.com/@ar_qasim_awan" target="_blank" class="hover:text-gray-400">YouTube</a></li>
                 <li><a href="profile.html" class="hover:text-gray-400">LinkedIn</a></li>  
-                <!-- add a subscription to email button with signup enabled? -->
             </ul>
         </div>
     </footer>

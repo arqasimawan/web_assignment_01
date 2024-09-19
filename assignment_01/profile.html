@@ -6,10 +6,11 @@
     <title>Portfolio - Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Otterco+Display:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         @font-face {
             font-family: 'otterco';
-            src: url('fonts/otterco.otf') format('opentype'); /* Adjust the path as necessary */
+            src: url('../fonts/otterco_fonts/Otterco-Regular.otf') format('opentype'); /* Adjust the path as necessary */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -17,26 +18,31 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            /* padding: 1rem; Adds padding for smaller screens */
         }
 
         .content {
-            flex: 1; /* Allows the content to grow and pushes the footer to the bottom */
+            flex: 1;
+        }
+
+        h1, h2 {
+            font-family: 'otterco', sans-serif;
         }
 
         .hero-section {
             background-color: #FAFAFA;
             color: #222;
-            padding: 5rem 0;
+            padding: 3rem 1rem; /* Reduced padding for mobile friendliness */
         }
 
         .hero-section h1 {
-            font-size: 4rem;
+            font-size: 3rem; /* Reduced heading size */
             font-weight: 800;
             color: #222;
         }
 
         .hero-section p {
-            font-size: 1.25rem;
+            font-size: 1.1rem; /* Reduced text size */
             color: #666;
         }
 
@@ -49,37 +55,55 @@
             font-weight: 600;
         }
 
+        section.description details {
+            margin-bottom: 1rem;
+        }
+
         footer {
             background-color: #FAFAFA;
             color: #777;
             padding: 1.5rem;
             width: 100%;
-            margin-top: auto; /* Ensures the footer is pushed to the bottom */
+            margin-top: auto;
         }
 
-        h1, h2 {
-            font-family: 'otterco', sans-serif;
-        }
+        /* Media Queries */
+        @media (max-width: 640px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
 
-        /* Social Links Styling */
-        .social-links a {
-            color: #333;
-            text-decoration: none;
-            border-bottom: 2px solid transparent;
-            transition: all 0.3s ease;
-        }
+            .hero-section p {
+                font-size: 0.9rem;
+            }
 
-        .social-links a:hover {
-            border-bottom: 2px solid #333;
+            .content {
+                padding: 1rem;
+            }
+
+            .description p {
+                font-size: 0.85rem;
+            }
         }
     </style>
+    <script>
+        function toggleNavbar() {
+            var navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="bg-white shadow p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">Abdul Rehman Qasim</a>
-            <ul class="flex space-x-4">
+            <a href="index.html" class="text-2xl font-bold text-gray-800" style="font-family: 'otterco', sans-serif;">Abdul Rehman Qasim</a>
+            <button class="md:hidden text-gray-500" onclick="toggleNavbar()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <ul id="navMenu" class="hidden md:flex space-x-4">
                 <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
                 <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
                 <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
@@ -89,17 +113,26 @@
                 <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
             </ul>
         </div>
+        <ul id="navMenu" class="md:hidden flex-col hidden space-y-2 mt-4">
+            <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+            <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+            <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+            <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+            <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+            <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+            <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Profile Section -->
     <section class="container mx-auto py-10 text-center content">
         <img src="images/profile.png" alt="Profile Picture" class="rounded-full mx-auto mb-4 w-32 h-32 object-cover">
-
         <h2 class="text-3xl font-bold mb-2">Abdul Rehman Qasim</h2>
         <section class="description">
             <details>
-                <summary>Courses</summary>
+                <summary>Certified Courses</summary>
                 <ul>
+                    <br>
                     <li>Agile Project Management -- <a href="https://drive.google.com/file/d/1rxxdueuVgfDXbujrg6AwLB0CuIZ1RHMW/view?usp=sharing">Coursera</a></li>
                     <li>Intro to SE -- <a href="https://drive.google.com/file/d/1gP8PbK_1mRdct1uQsO_Py3yAW7o7Ey-z/view?usp=sharing">Coursera</a></li>
                     <li>PM Foundation -- <a href="https://drive.google.com/file/d/1cTWBNMNN2RaxqOPkW4oxpqiZ3i9PkjcE/view?usp=sharing">Coursera</a></li>
@@ -109,12 +142,13 @@
                 </ul>
             </details>
 
+            <br>
             <details>
                 <summary>Background</summary>
                 <ul>
-                    <li>From an ancestry of teachers</li>
+                    <br>
                     <li>Qutab Shahi Awan -- half scholars, half warriors</li>
-                    <li>They say that you can't deny blood, and that has never been truer than for me</li>
+                    <li>They say that you can't deny blood, and that has never been truer for me</li>
                     <li>My <em>mother</em> -- a teacher</li>
                     <li>My <em>sister</em> -- a teacher</li>
                     <br>
@@ -122,21 +156,23 @@
                 </ul>
             </details>
 
+            <br>
             <details>
                 <summary>Introduction</summary>
                 <p>
+                    <br>
                     Everybody has a unique journey, and mine doesn't shy away from being unique at all.
                     From studying biology to getting admission into Software Engineering at NUCES, unique right?
                     <br>
                     Someone who has no limits but is limiting himself to ONE THING at a time to do his best. Someone leveraging AI to become a more capable and productive human. Someone who loves doing business with his friend and awesome human, Moiz.
-                    Someone who wants to witness the best he can do. Someone who grows 1% every day. Someone who will die but will leave a legacy not far behind that of Abdul Rehman Bin Auf(RA) in terms of business.
+                    Someone who wants to witness the best he can do. Someone who grows 1% every day. <br><br>
+                    Someone who will die but will leave a legacy not far behind that of Abdul Rehman Bin Auf(RA) in terms of business.
                     <br><br>
                     This is Abdul Rehman Qasim and welcome to my world!
                 </p>
             </details>
         </section>
     </section>
-
     <!-- Footer -->
     <footer>
         <div class="container mx-auto flex justify-between items-center">

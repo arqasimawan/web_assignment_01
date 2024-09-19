@@ -9,7 +9,7 @@
     <style>
         @font-face {
             font-family: 'otterco';
-            src: url('fonts/otterco.otf') format('opentype'); /* Adjust the path as necessary */
+            src: url('../fonts/otterco_fonts/Otterco-Regular.otf') format('opentype'); /* Adjust the path as necessary */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -76,16 +76,31 @@
             background-color: #FAFAFA;
             color: #777;
             padding: 1.5rem;
+            text-align: center;
         }
         
     </style>
+    <script>
+        // Navbar toggle for mobile screens
+        function toggleNavbar() {
+            var navMenu = document.getElementById('navMenu');
+            navMenu.classList.toggle('hidden');
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="bg-white shadow p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-gray-800">Abdul Rehman Qasim</a>
-            <ul class="flex space-x-4">
+            <a href="index.html" class="text-2xl font-bold text-gray-800" style="font-family: 'otterco', sans-serif;">Abdul Rehman Qasim</a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-500" onclick="toggleNavbar()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            <!-- Desktop Menu -->
+            <ul id="navMenu" class="hidden md:flex space-x-4">
                 <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
                 <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
                 <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
@@ -95,13 +110,23 @@
                 <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
             </ul>
         </div>
+        <!-- Mobile Menu (collapsible) -->
+        <ul id="navMenu" class="md:hidden flex-col hidden space-y-2 mt-4">
+            <li><a href="index.html" class="hover:text-gray-600">Home</a></li>
+            <li><a href="profile.html" class="hover:text-gray-600">Profile</a></li>
+            <li><a href="gallery.html" class="hover:text-gray-600">Gallery</a></li>
+            <li><a href="career-goals.html" class="hover:text-gray-600">Career Goals</a></li>
+            <li><a href="projects.html" class="hover:text-gray-600">Projects</a></li>
+            <li><a href="skills.html" class="hover:text-gray-600">Skills & Interests</a></li>
+            <li><a href="contact.html" class="hover:text-gray-600">Contact</a></li>
+        </ul>
     </nav>
 
     <!-- Contact Section -->
     <section class="contact-section container mx-auto py-10">
         <h2 class="text-3xl font-bold text-center mb-6">Contact Me</h2>
         <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg mx-auto">
-            <form action="#" method="POST" class="space-y-4">
+            <form action="https://formspree.io/f/mjkbqkjn" method="POST" class="space-y-4">
                 <div>
                     <label for="name" class="block text-lg font-semibold mb-1">Name</label>
                     <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Your name" required>
@@ -126,7 +151,7 @@
         
         <!-- Contact Buttons -->
         <div class="contact-buttons">
-            <a href="mailto:ar.qasim.awan@gmail.com" class="email-button">Email Me</a>
+            <a href="mailto:ar.qasim.awan@gmail.com" class="email-button">Email</a>
             <a href="https://wa.me/923200916196" class="whatsapp-button">WhatsApp</a>  
         </div>
     </section>
@@ -141,5 +166,6 @@
             </ul>
         </div>
     </footer>
+
 </body>
 </html>
